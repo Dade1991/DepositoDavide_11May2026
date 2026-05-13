@@ -85,12 +85,12 @@ section:hover {
   transform: scale(1.05);
 }
 
-/* Impedisce al footer di rimpicciolirsi e/o modificarsi */
-
 footer {
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 2rem;
   color: white;
+
+  /* Impedisce al footer di rimpicciolirsi e/o modificarsi */
   flex-shrink: 0;
 }

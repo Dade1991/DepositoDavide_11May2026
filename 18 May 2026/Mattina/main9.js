@@ -101,9 +101,9 @@ switch (valore) {
 
 // Condizioni - Casi multipli (stesso risultato)
 
-let giorno = 6
+let giorno2 = 6
 
-switch (giorno) {
+switch (giorno2) {
   case 6:
   case 7:
     console.log("Weekend")
@@ -113,3 +113,25 @@ switch (giorno) {
   default:
     console.log("Giorno lavorativo")
 }
+
+// Cicli - for è utilizzato quando si conosce il numero di iterazioni.
+
+for (let i = 0; i < 3; i++) {
+  console.log(i + " FIRST") // 0, 1, 2
+}
+
+// Cicli - while esegue il blocco finché la condizione è vera.
+
+let i = 0
+
+while (i < 3) {
+  console.log(i + " SECOND") // 0, 1, 2
+  i++
+}
+
+// Cicli - do-while esegue almeno una volta il blocco, poi verifica.
+
+do {
+  console.log(i + " THIRD") // 0, 1, 2
+  i++
+} while (i < 3)

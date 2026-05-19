@@ -117,3 +117,39 @@ function transfromInUpperCase(wordsContainer) {
 }
 
 // Inizializzo funzione per avvio del programma
+
+function startProgram() {
+  // Mentre è vero, il programma continua fino a che "fine" non si esegue.
+
+  while (true) {
+    let userWord = prompt(
+      "Insert a word (Type 'fine' to stop the program): ",
+    ).trim() // Taglia eventuali spazi vuoti
+
+    // Trasforma la parola dell'utente in lowercase per controllare che sia o no uguale a "fine" per stoppare l'esecuzione
+
+    if (userWord.toLowerCase() === "fine") {
+      break
+    }
+
+    // Se la parola è valida (ovvero è corretta, non contiene caratteri strani, numeri, etc) la pusherà all'interno dell'array dedicato.
+
+    if (validWord(userWord)) {
+      wordsContainer.push(userWord)
+    } else {
+      console.log("Invalid word. Insert only letters.")
+    }
+  }
+
+  console.log("Original array: ", wordsContainer)
+  console.log("Total words: ", findHowManyWords(wordsContainer))
+  console.log("Longest words: ", findLongestWord(wordsContainer))
+  console.log("Shortest words: ", findShortestWord(wordsContainer))
+  console.log(
+    "Words that starting with vowel: ",
+    findInitialVowels(wordsContainer),
+  )
+  console.log("UpperCase array: ", transfromInUpperCase(wordsContainer))
+}
+
+startProgram()

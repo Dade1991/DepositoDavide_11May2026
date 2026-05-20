@@ -78,7 +78,7 @@ inputText.addEventListener("keydown", function (event) {
 })
 
 // Richiamo il btnRemove e gli impongo l'ascolto di un evento al suo click.
-// Triggerato il bottone, partirà la funzione che rimuoverè l'ultimo figlio <li> della lista <ul>
+// Triggerato il bottone, partirà la funzione che controllerà se esiste un ultimo figlio e imuoverè l'ultimo figlio <li> della lista <ul>
 // Ritriggera il counter
 // Se l'utente volesse cancellare una list vuota, riceverebbe un alert (gestione errori/comportamenti utente)
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles24-1.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Homepage</a>
+        <a href="#">Contatti</a>
+        <a href="#">Collezioni</a>
+        <a href="#">Legale</a>
+      </nav>
+    </header>
+    <main>
+      <h1 id="libraryTitle">Libreria</h1>
+      <p class="introduction">
+        Siamo il punto di riferimento per chi ama esplorare il mondo attraverso
+        i libri. La nostra libreria unisce la passione per la lettura a una
+        visione moderna e cosmopolita: uno spazio vivo, animato da presentazioni
+        editoriali, dibattiti e laboratori. Dalla narrativa contemporanea alle
+        graphic novel, dalla saggistica d'attualità ai libri illustrati,
+        offriamo una panoramica attenta e aggiornata sul panorama culturale.
+        Vieni a scoprire la tua prossima lettura e lasciati ispirare dalle
+        nostre proposte.
+      </p>
+      <p>Inserisci qui sotto un nuovo libro da aggiungere alla collezione!</p>
+      <form id="formContainer" action="">
+        <label for="title">Titolo:</label>
+        <input type="text" id="bookName" name="title" />
+
+        <label for="author">Autore:</label>
+        <input type="text" id="authorName" name="author" />
+        <label for="genre">Genere:</label>
+        <input type="text" id="genreName" name="genre" />
+
+        <label for="year">Anno di pubblicazione:</label>
+        <input type="text" id="publishYear" name="year" />
+        <label for="description">Descrizione breve:</label>
+        <input type="text" id="bookDescription" name="description" />
+        <button type="submit" class="btnSubmit">Aggiungi</button>
+      </form>
+      <section class="bookListContainer">
+        <h2 id="libraryDB">Libri aggiunti</h2>
+        <div id="bookList"></div>
+      </section>
+    </main>
+  </body>
+  <script src="main24-1.js"></script>
+</html>

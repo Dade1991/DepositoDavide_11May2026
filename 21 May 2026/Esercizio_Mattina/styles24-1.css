@@ -3,6 +3,7 @@ body {
   background-color: #f4efe6;
   line-height: 1.6;
   margin: 0px;
+  font-size: 0.95rem;
 }
 
 header {
@@ -12,6 +13,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 a {
@@ -21,6 +25,13 @@ a {
   cursor: pointer;
   color: #5c4033;
   text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+a:hover {
+  background-color: #b6b0a5;
+  transform: translateY(-2px);
 }
 
 main {
@@ -29,21 +40,144 @@ main {
   margin: 0 auto;
 }
 
+h1 {
+  color: #5c4033;
+  text-align: center;
+}
+
+.introduction {
+  text-align: justify;
+}
+
+.introduction2 {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: #5c4033;
+  font-size: 1.2rem;
+}
+
 #formContainer {
   display: flex;
   flex-direction: column;
   max-width: 900px;
   margin: 0 auto;
-  background-color: #ffffff;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  background-color: #fdf7f1;
+  border: 1px solid #dbc8b7;
 }
 
 label {
   margin: 5px 0px 5px 0px;
+  font-weight: bold;
+  color: #5c4033;
 }
 
 input {
   margin: 5px 0px 5px 0px;
+  min-height: 20px;
+}
+
+#formContainer > button {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #5c4033;
+  padding: 10px 10px 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fdf7f1;
+
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+}
+
+.bookListContainer {
+  text-align: center;
+  color: #5c4033;
+}
+
+#bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /*
+  - repeat > ripete il medesimo schema tra parentesi, infinite volte o quante volte l'utente richiederà
+  - auto-fit > crea tante colonne quante riescono a stare nello spazio disponibile 
+  - minmax(220px, 1fr) > ogni colonna non potrà essere più piccola di 220px e puo crescere fino a 1fr, una frazione dello spazio disponibile
+  */
+  gap: 18px;
+}
+
+.bookCard {
+  background-color: #fdf7f1;
+  border: 1px solid #dbc8b7;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.bookCard > h3 {
+  font-style: oblique;
+  color: #5c4033;
+  margin: 10px 0px 10px 0px;
+  font-size: 1.5rem;
+}
+
+.bookCard > hr {
+  margin: 0px;
+}
+
+.bookCard > p {
+  margin: 10px 0px 10px 0px;
+}
+
+/* Hamburger Responsive Settings */
+
+/* Impostazioni base hamburgerMenu */
+
+#hamburger {
+  display: none; /* tramite questa proprietà, a schermo oltre i 768px, non verrà mostrato l'hamburger Menu*/
+  background-color: transparent;
+  border: none;
+  color: #f4efe6;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Media query con comportamento specifico */
+
+@media only screen and (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  /* Sotto la soglia dei 768px, verrà mostrato l'hamburger */
+  #hamburger {
+    display: block;
+  }
+
+  /* Sotto la soglia dei 768px, verrà rimosso il classico menu composto dalle <a> */
+
+  #navMenu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  /* Con la classe "active" mostro i links del menu originale ma disposti in colonna */
+
+  #navMenu.active {
+    display: flex;
+  }
+
+  /* Stili dedicati al menu a colonna/hamburger */
+
+  #navMenu a {
+    padding: 5px 10px 5px 10px;
+    margin: 5px 0px;
+  }
 }

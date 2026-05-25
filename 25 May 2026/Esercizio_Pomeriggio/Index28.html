@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Negozio di Giocattoli - Inserimento</title>
+    <link rel="stylesheet" href="styles28.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestione Negozio di Giocattoli</h1>
+      <nav>
+        <a href="./Index28.html">Inserisci giocattolo</a>
+        <a href="./Index28-1.html">Elenco giocattoli</a>
+        <a href="./Index28-2.html">Riepilogo</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="card">
+        <h2>Inserisci un nuovo giocattolo</h2>
+
+        <form id="toyForm">
+          <div class="formGroup">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+
+          <div class="formGroup">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">Seleziona una categoria</option>
+              <option value="Costruzioni">Costruzioni</option>
+              <option value="Educativi">Educativi</option>
+              <option value="Bambole">Bambole</option>
+              <option value="Veicoli">Veicoli</option>
+              <option value="Puzzle">Puzzle</option>
+              <option value="Giochi da tavolo">Giochi da tavolo</option>
+              <option value="Altro">Altro</option>
+            </select>
+          </div>
+
+          <div class="formGroup">
+            <label for="prezzo">Prezzo (€)</label>
+            <input
+              type="number"
+              id="prezzo"
+              name="prezzo"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <div class="formGroup">
+            <label for="eta">Età consigliata</label>
+            <input
+              type="text"
+              id="eta"
+              name="eta"
+              placeholder="Es. 3+, 6-10 anni"
+              required
+            />
+          </div>
+
+          <div class="formGroup checkboxGroup">
+            <input type="checkbox" id="disponibile" name="disponibile" />
+            <label for="disponibile">Disponibile</label>
+          </div>
+
+          <button type="submit">Salva giocattolo</button>
+        </form>
+
+        <p id="messaggio" class="messaggioCSS"></p>
+      </section>
+    </main>
+  </body>
+  <script src="main28.js"></script>
+</html>

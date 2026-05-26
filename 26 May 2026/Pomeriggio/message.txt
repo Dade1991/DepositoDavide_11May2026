@@ -1,0 +1,1 @@
+Ciao Davide! Questo messaggio arriva da un file di testo letto con Node.js.

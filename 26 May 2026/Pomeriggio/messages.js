@@ -40,18 +40,35 @@ function showMessage(fileName) {
 // - se è una cartella
 
 function showFileInfo(fileName) {
+  // Creo il percorso completo del file unendo:
+  // - __dirname = cartella del file corrente
+  // - fileName = nome del file passato come parametro
+
   const fullPath = path.join(__dirname, fileName)
 
-  // stat recupera le informazioni del file/cartella.
+  // fs.stat legge le informazioni tecniche di un file o di una cartella.
+  // La callback riceve:
+  // - error: eventuale errore
+  // - stats: oggetto con le informazioni del file
 
   fs.stat(fullPath, (error, stats) => {
+    // Se c'è un errore, lo stampo nel terminale e interrompo la funzione.
+
     if (error) {
       console.error(`Error retring the file: ${fileName}`, error.message)
       return
     } else {
+      // Se non ci sono errori, stampo le informazioni principali
+
       console.log(`Info about file: ${fileName}`)
       console.log(`File dimension:`, stats.size, ` byte`)
+
+      // Controllo se il percorso punta a un file vero e proprio.
+
       console.log(`It is a file? `, stats.isFile())
+
+      // Controllo se il percorso punta a un file vero e proprio.
+
       console.log(`It is a folder? `, stats.isDirectory())
     }
   })
